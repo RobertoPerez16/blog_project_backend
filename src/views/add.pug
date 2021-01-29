@@ -1,0 +1,19 @@
+.container
+    form(action='/usuarios/add' method='POST')
+            .form-group
+              input.form-control(type='text' name='nombre' placeholder='Nombre' autofocus='' required='')
+            br
+            .form-group
+              input.form-control(type='correo' name='correo' placeholder='correo' required='')
+            br
+            .form-group
+              input.form-control(type='password' name='password' placeholder='password' required='')
+            br
+            .form-group
+              input.form-control(type='text' name='edad' placeholder='edad' required='')
+            br
+            .form-group
+              input.form-control(type='text' name='foto' placeholder='foto' required='')
+            br
+            .form-group
+              button.btn.btn-success(style='width: 100%;')  Save
