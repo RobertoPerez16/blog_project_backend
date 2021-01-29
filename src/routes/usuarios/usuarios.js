@@ -1,24 +1,22 @@
 const { Router } = require("express");
 const router = Router();
-const pool=require('../../database');
+const {registrar,login}=require('../../controller/usuarios/usuarioController');
 
-router.get("/add", (req, res) => {
+router.get("/registro", (req, res) => {
   res.render('add');
 })
 
-router.post("/add", async (req,res)=>{
-  const {nombre,correo,password,edad,foto}= req.body;
-  console.log(req.body);
-  const newLink={
-    nombre,
-    correo,
-    password,
-    edad,
-    foto
-  };
- await pool.query('INSERT INTO usuarios set ?',[newLink]);
-  res.send("Usuario creado exitosamente");
+router.post("/registro", registrar);
+
+router.get("/perfil",(req,res)=>{
+  res.render("perfil");
 });
+
+router.get("/login",(req,res)=>{
+  res.render('login');
+});
+
+router.post("/login", login);
 
 module.exports = router
 

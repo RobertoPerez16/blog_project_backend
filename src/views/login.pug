@@ -1,0 +1,13 @@
+.container
+    form(action='/usuarios/login' method='POST')
+            .form-group
+              input.form-control(type='correo' name='correo' placeholder='correo' required='')
+            br
+            .form-group
+              input.form-control(type='password' name='password' placeholder='password' required='')
+            .form-group
+              button.btn.btn-success(style='width: 100%;')  Ingresar
+
+            if message
+            p #{message}
+            
