@@ -17,7 +17,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 app.use(session({
-    secret: 'faztmysqlnodemysql',
+    secret: 'myblog',
     resave: false,
     saveUninitialized: false,
 }));

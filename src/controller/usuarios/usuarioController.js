@@ -18,7 +18,13 @@ failureFlash:true
 })(req,res,next);
 };
 
+const logout=(req,res)=>{
+req.logout();
+res.redirect("/usuarios/login")
+}
+
 module.exports ={
 registrar,
-login
+login,
+logout
 }
